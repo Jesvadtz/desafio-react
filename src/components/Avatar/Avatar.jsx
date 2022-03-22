@@ -1,8 +1,9 @@
 import React from "react";
+import "./Avatar.scss";
 
-function ImageUser(props) {
+function Avatar(props) {
   const { src } = props;
-  return <image src={src} />;
+  return <img src={src} className="rounded-circle avatar" />;
 }
 
-export default ImageUser;
+export default Avatar;

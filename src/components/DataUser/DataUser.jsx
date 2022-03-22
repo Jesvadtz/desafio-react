@@ -1,18 +1,17 @@
 import React from "react";
-import Date from "../Date/Date";
+import DatePost from "../DatePost/DatePost";
 import Avatar from "../Avatar/Avatar";
 import UserName from "../UserName/UserName";
-import AvatarImage from "../../assets/img/user-02.webp";
 
 function DataUser(props) {
   return (
-    <section>
+    <section className="d-flex">
       <div>
-        <Avatar src={AvatarImage} />
+        <Avatar src="/assets/img/user-01.webp" />
       </div>
       <div>
-        <UserName userName="fulanito de tal" />
-        <Date date="20-marzo" />
+        <UserName userName="NameUser" />
+        <DatePost date="Marzo 21" />
       </div>
     </section>
   );

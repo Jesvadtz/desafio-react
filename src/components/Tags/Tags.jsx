@@ -1,9 +1,13 @@
 import React from "react";
-import { Button } from "bootstrap";
+import Button from "react-bootstrap/Button";
 
 function Tag(props) {
   const { tag } = props;
-  return <Button variant="light">#{tag}</Button>;
+  return (
+    <Button variant="light" className="btn-white">
+      #{tag}
+    </Button>
+  );
 }
 
 export default Tag;

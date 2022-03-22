@@ -1,0 +1,28 @@
+.cardPost {
+  height: 100px;
+  width: 100px;
+}
+.coverPost {
+  height: 200px;
+  object-fit: cover;
+}
+.title-card {
+  padding-left: 40px;
+}
+.tags-card {
+  padding-left: 30px;
+}
+.comments-card {
+  padding-left: 28px;
+}
+@media (max-width: 767px) {
+  .title-card {
+    padding-left: 10px;
+  }
+  .tags-card {
+    padding-left: 0px;
+  }
+  .comments-card {
+    padding-left: 0px;
+  }
+}
