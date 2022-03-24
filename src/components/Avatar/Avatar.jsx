@@ -3,7 +3,7 @@ import "./Avatar.scss";
 
 function Avatar(props) {
   const { src } = props;
-  return <img src={src} className="rounded-circle avatar" />;
+  return <img src={src} className="rounded-circle avatar" alt="Avatar user" />;
 }
 
 export default Avatar;

@@ -3,7 +3,20 @@ import Navbar from "../components/Navbar/Navbar";
 import CardPost from "../components/CardPost/CardPost";
 import { Container, Row, Col } from "react-bootstrap";
 
-function Layout() {
+function Home(props) {
+  const [posts, setPost] = React.useState([]);
+  const { title, src, userName, date, key, tag } = props;
+
+  React.useEffect(() => {
+    async function getAllPost() {
+      const posts = await fetch("https://api-devto.vercel.app/posts").then(
+        (res) => res.json()
+      );
+      setPost(posts.data.posts);
+    }
+    getAllPost();
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -11,7 +24,20 @@ function Layout() {
         <Row>
           <Col md={3}>Robert</Col>
           <Col xs={12} md={9} lg={6} className="pe-0 ps-0 rounded-0">
-            <CardPost />
+            {posts.map((post) => {
+              const date = new Date(post.createdAt);
+              let datePost = date.toLocaleString();
+
+              return (
+                <CardPost
+                  title={post.title}
+                  key={post._id}
+                  userName={post.writer}
+                  date={datePost}
+                  tag={post.tags}
+                />
+              );
+            })}
           </Col>
           <Col>Rubs</Col>
         </Row>
@@ -28,4 +54,4 @@ function Layout() {
   );
 }
 
-export default Layout;
+export default Home;
