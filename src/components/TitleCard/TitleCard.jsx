@@ -3,7 +3,11 @@ import "./TitleCard.scss";
 
 function TitleCard(props) {
   const { title } = props;
-  return <a className="titleCard">{title}</a>;
+  return (
+    <a className="titleCard" href="index.html">
+      {title}
+    </a>
+  );
 }
 
 export default TitleCard;
