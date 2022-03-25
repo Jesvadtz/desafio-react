@@ -7,13 +7,17 @@ import "./CardAsideARS.css";
 function CardAsideARS(props) {
   return (
     <Card className="row cardARS">
-      <TitleCardAR  title="Listings" />
+      <TitleCardAR title="Listings" />
 
-      <TitleARAncor class="text-muted" title="Astra DB's Build-A-Thon"></TitleARAncor>
+      <TitleARAncor
+        class="text-muted"
+        title="Astra DB's Build-A-Thon"
+      ></TitleARAncor>
       <TitleARAncor title="Ready-to-use UI Test Automation Architecture using Java and Selenium WebDriver"></TitleARAncor>
       <TitleARAncor title="✂️ Add the best Image Cropper to your Upload Fields"></TitleARAncor>
       <TitleARAncor title="Looking for teaching position!"></TitleARAncor>
       <TitleARAncor title="📨 This Week In React: newsletter for professionals ⚛️"></TitleARAncor>
+      <TitleARAncor title="Create a Listing"></TitleARAncor>
     </Card>
   );
 }
