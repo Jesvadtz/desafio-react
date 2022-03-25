@@ -6,15 +6,12 @@
   text-decoration: none;
   color: black;
   line-height: 34px;
-  padding: 16px;
+  padding: 12px;
+  border-top: solid rgb(226, 226, 226) 1px;
+  cursor:pointer;
 }
 .titleCardARAncor:hover {
   color: #3b49df;
 }
 
-@media (max-width: "768px") {
-  .titleCardARAncor {
-    font-size: 20px;
-    line-height: 24px;
-  }
-}
+

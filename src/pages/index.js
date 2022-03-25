@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import CardPost from "../components/CardPost/CardPost";
 import CardAsideR from "../components/CardAsideR/CardAsideR";
+import CardAsideRT from "../components/CardAsideRT/CardAsideRT";
+import CardAsideARS from "../components/CardAsideARS/CardAsideARS"
 import { Container, Row, Col } from "react-bootstrap";
 
 function Layout() {
@@ -15,8 +17,9 @@ function Layout() {
             <CardPost />
           </Col>
           <Col>
-            Rubs
+            <CardAsideRT></CardAsideRT>
             <CardAsideR></CardAsideR>
+            <CardAsideARS></CardAsideARS>
           </Col>
         </Row>
       </Container>

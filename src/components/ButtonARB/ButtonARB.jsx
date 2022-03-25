@@ -3,7 +3,11 @@ import Button from "react-bootstrap/Button";
 import styles from "./ButtonARB.module.css";
 
 function ButtonARB(props) {
-  return <Button className={styles.button}>Primary</Button>;
+  return (
+    <div className="containerButton">
+      <Button className={styles.button}>Submit Your Project!</Button>
+    </div>
+  );
 }
 
 export default ButtonARB;

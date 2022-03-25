@@ -1,5 +1,5 @@
 import React from "react";
-import "./TitleCardAR.scss";
+import "./TitleCardAR.css";
 
 function TitleCardAR(props) {
   const { title } = props;
