@@ -57,4 +57,6 @@ const otherList = [
     }
 ]
 
-export  {list, otherList};
+const hashtags = ["javascript", "webdev", "beginners", "programming", "tutorial" , "react", "python"]
+
+export  {list, otherList, hashtags};
