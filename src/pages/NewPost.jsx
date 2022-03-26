@@ -2,8 +2,6 @@ import React from "react";
 import NavbarNewPost from "../components/NavbarNewPost/NavbarNewPost";
 import InputNewPost from "../components/InputNewPost/InputNewPost";
 import { Container, Row, Col } from "react-bootstrap";
-// import HelperOne from "../components/Helpers/Helpers";
-import FooterNewPost from "../components/FooterNewPost/FooterNewPost";
 
 function NewPost() {
   return (
@@ -15,11 +13,10 @@ function NewPost() {
             <Col md={8}>
               <InputNewPost />
             </Col>
-            <Col md={3}>{/* <HelperOne /> */}</Col>
+            <Col md={3}></Col>
           </Row>
         </Container>
       </main>
-      <FooterNewPost />
     </>
   );
 }

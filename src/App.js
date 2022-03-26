@@ -19,7 +19,3 @@ function App() {
   );
 }
 export default App;
-
-// Robert : Aside Left
-// Rubs : Aside Rigth
-// Jess : Section center and navbar, create new post

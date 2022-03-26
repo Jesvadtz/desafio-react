@@ -7,7 +7,7 @@ import "./FooterNewPost.scss";
 function FooterNewPost(props) {
   return (
     <Container>
-      <footer className="d-flex justify-content-start sticky-bottom footer-post ms-lg-5 pt-2 gap-1">
+      <footer className="d-flex justify-content-start sticky-bottom footer-post ms-lg-2 pt-2 gap-2">
         <ButtonPrimary text="Publish" />
         <ButtonIcon text="Save" />
         <ButtonIcon src="/assets/svg/icon-savepost.svg" />

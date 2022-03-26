@@ -14,12 +14,11 @@ import { Container, Row, Col } from "react-bootstrap";
 
 function Home(props) {
   const [posts, setPost] = React.useState([]);
-  const { title, src, userName, date, key, tag } = props;
 
   React.useEffect(() => {
     async function getAllPost() {
-      const posts = await fetch("https://api-devto.vercel.app/posts").then(
-        (res) => res.json()
+      const posts = await fetch("http://localhost:8080/posts").then((res) =>
+        res.json()
       );
       setPost(posts.data.posts);
     }
