@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages";
 import NewPost from "./pages/NewPost";
 import "./App.scss";
+import DetailPost from "./pages/DetailPost";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="newpost" element={<NewPost />} />
+        <Route path="posts/:idPost" element={<DetailPost />} />
       </Routes>
     </div>
   );

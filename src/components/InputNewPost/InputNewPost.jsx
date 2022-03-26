@@ -27,7 +27,8 @@ function InputNewPost(props) {
       method: "POST",
       body: JSON.stringify(newPost),
       headers: {
-        Authorization: "",
+        Authorization:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjY1Nzc1ZjZjMTU0ZmQ4Nzk0NWRhYyIsImlhdCI6MTY0ODI1NTM3NywiZXhwIjoxNjQ4MjkxMzc3fQ._yNIY-ob5_d3rZGhZcsLWNIPakuImMYV_yfTNS_QMII",
       },
     }).then((res) => res.json());
     navigate("/", { replace: true });
