@@ -1,0 +1,39 @@
+.ancARL {
+  text-decoration: none;
+  font-size: 14px;
+  color: #3b49df;
+}
+.containerARLT {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ancARCL {
+  text-decoration: none;
+  font-size: 14px;
+  color: #4d4d4d;
+  font-weight: 600;
+}
+.cardARS {
+  margin-top: 15px;
+  background-color: #fafafa;
+}
+.cardARSS {
+  border-top: 0.5px solid rgb(230, 230, 230);
+  background-color: #fafafa;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.cardARSrCL {
+  border-top: 0.5px solid rgb(230, 230, 230);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0 20px 0;
+  background-color: #fafafa;
+}
+
+.cardARSS:hover {
+  background-color: white;
+}

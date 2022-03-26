@@ -1,9 +1,10 @@
 .imageCardART {
   height: 200px;
   object-fit: cover;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.cardARS{
-margin-left: 10px;
+.cardARS {
+  margin-left: 10px;
 }
+

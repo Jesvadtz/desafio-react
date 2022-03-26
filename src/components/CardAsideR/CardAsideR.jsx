@@ -6,7 +6,7 @@ import "./CardAsideR.css";
 import ButtonARG from "../ButtonARG/ButtonARG";
 import ButtonARB from "../ButtonARB/ButtonARB";
 
-function CardAsideR(props) {
+function CardARHE(props) {
   return (
     <Card className="row cardARS">
       <Card.Img
@@ -17,16 +17,21 @@ function CardAsideR(props) {
       />
 
       <TitleCardAR title="Deepgram x DEV Hackathon (18)" />
-
-      <TitleARAncor title="Fun With Deepgram and NextJS "></TitleARAncor>
-
-      <TitleARAncor title="[Deepgram x DEV Hackathon Submission Post Placeholder Totle] "></TitleARAncor>
-
-      <TitleARAncor title="[Deepgram x DEV Hackathon Submission Post Placeholder Totle] "></TitleARAncor>
-
-      <TitleARAncor title="BeReadable - Online Multilingual Audio Transcription and Recoder "></TitleARAncor>
-      <TitleARAncor title="AudioSing: Converting audio to animated sing language (FIN) "></TitleARAncor>
-
+      <div className="titlCardARS">
+        <TitleARAncor title="Fun With Deepgram and NextJS "></TitleARAncor>
+      </div>
+      <div className="titlCardARS">
+        <TitleARAncor title="[Deepgram x DEV Hackathon Submission Post Placeholder Totle] "></TitleARAncor>
+      </div>
+      <div className="titlCardARS">
+        <TitleARAncor title="[Deepgram x DEV Hackathon Submission Post Placeholder Totle] "></TitleARAncor>
+      </div>
+      <div className="titlCardARS">
+        <TitleARAncor title="BeReadable - Online Multilingual Audio Transcription and Recoder "></TitleARAncor>
+      </div>
+      <div className="titlCardARS">
+        <TitleARAncor title="AudioSing: Converting audio to animated sing language (FIN) "></TitleARAncor>
+      </div>
       <ButtonARB></ButtonARB>
 
       <ButtonARG></ButtonARG>
@@ -34,4 +39,4 @@ function CardAsideR(props) {
   );
 }
 
-export default CardAsideR;
+export default CardARHE;
