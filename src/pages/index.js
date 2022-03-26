@@ -5,6 +5,7 @@ import CardAsideR from "../components/CardAsideR/CardAsideR";
 import CardAsideRT from "../components/CardAsideRT/CardAsideRT";
 import CardAsideARS from "../components/CardAsideARS/CardAsideARS"
 import { Container, Row, Col } from "react-bootstrap";
+import LeftSide from "../components/LeftSide/Left";
 
 function Layout() {
   return (
@@ -12,7 +13,9 @@ function Layout() {
       <Navbar />
       <Container style={{ marginTop: "64px", paddingTop: "1rem" }}>
         <Row>
-          <Col md={3}>Robert</Col>
+          <Col md={3}>
+            <LeftSide/>
+          </Col>
           <Col xs={12} md={9} lg={6} className="pe-0 ps-0 rounded-0">
             <CardPost />
           </Col>
