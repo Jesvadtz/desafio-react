@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import CardPost from "../components/CardPost/CardPost";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Home(props) {
   const [posts, setPost] = React.useState([]);
@@ -28,27 +29,21 @@ function Home(props) {
               let datePost = date.toLocaleString();
 
               return (
-                <CardPost
-                  title={post.title}
-                  key={post._id}
-                  userName={post.writer}
-                  date={datePost}
-                  tag={post.tags}
-                />
+                <Link to={`/posts/${post._id}`} key={post._id}>
+                  <CardPost
+                    title={post.title}
+                    key={post._id}
+                    userName={post.writer}
+                    date={datePost}
+                    tag={post.tags}
+                  />
+                </Link>
               );
             })}
           </Col>
           <Col>Rubs</Col>
         </Row>
       </Container>
-      {/* <Header>
-      </Header>
-      <Main>
-        <AsideLeft />
-        <SectionPost />
-        <AdsideRight />
-      </Main>
-      <Footer /> */}
     </>
   );
 }
