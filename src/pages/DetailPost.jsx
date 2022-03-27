@@ -24,8 +24,7 @@ function DetailPost(props) {
       const post = await fetch(`http://localhost:8080/posts/${params.idPost}`, {
         method: "GET",
         headers: {
-          Authorization:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjY1Nzc1ZjZjMTU0ZmQ4Nzk0NWRhYyIsImlhdCI6MTY0ODMxODkyNywiZXhwIjoxNjQ4MzU0OTI3fQ.IA_E0DudbjgA48y30wyXMDL22fxrfp6M2LiDnq2-zJI",
+          Authorization: "",
         },
       }).then((res) => res.json());
       setDataPost(post.data.post);
@@ -59,6 +58,7 @@ function DetailPost(props) {
               userName={writer}
               date={datePost}
               tag={tags}
+              idPost={params.idPost}
             />
             <SectionExtraDetailPost />
           </Col>

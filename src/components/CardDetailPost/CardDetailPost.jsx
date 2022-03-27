@@ -4,9 +4,11 @@ import SectionTags from "../SectionTags/SectionTags";
 import DataUser from "../DataUser/DataUser";
 import ContentPost from "../ContentPost/ContentPost";
 import TitleDetailPost from "../TitleDetailPost/TitleDetailPost";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function CardDetailPost(props) {
-  const { title, src, userName, date, tag, content } = props;
+  const { title, src, userName, date, tag, content, idPost } = props;
 
   return (
     <Card className="mb-3 p-4">
@@ -19,8 +21,13 @@ function CardDetailPost(props) {
         />
       )}
       <Card.Body className="p-3 p-md-4">
-        <DataUser userName={userName} date={date} />
-        <div className="d-flex flex-column gap-2">
+        <div className="d-flex justify-content-between align-items-start">
+          <DataUser userName={userName} date={date} />
+          <Link to={`/posts/${idPost}/edit`}>
+            <Button variant="warning">Edit</Button>
+          </Link>
+        </div>
+        <div className="d-flex flex-column gap-2 mt-3">
           <TitleDetailPost title={title} />
         </div>
         <div className="mb-4">
