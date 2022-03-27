@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
-import NavbarMobile from "../NavbarMobile/NavbarMobile";
+import MobileNavSignup from "../MobileNavSignup/MobileNavSignup";
 import { Container, Nav } from "react-bootstrap";
-import "./Navbar.scss";
+import "./NavSignup.scss";
 
-function Navbar() {
+function NavbarSignup() {
   return (
-    <nav className="navbar navbar-light navbar-expand-lg fixed-top bg-white m-navbar">
+    <Nav className="navbar navbar-light navbar-expand-lg fixed-top bg-white m-navbar">
       <Container>
         <div className="d-flex justify-content-md-between align-items-center">
-          <NavbarMobile />
+          <MobileNavSignup />
           <Link to="/">
             <img
               src="/assets/svg/devto.svg"
@@ -45,8 +45,8 @@ function Navbar() {
           </Link>
         </div>
       </Container>
-    </nav>
+    </Nav>
   );
 }
 
-export default Navbar;
+export default NavbarSignup;
