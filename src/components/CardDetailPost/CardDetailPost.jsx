@@ -1,9 +1,9 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import SectionTags from "../SectionTags/SectionTags";
-import TitleCard from "../TitleCard/TitleCard";
 import DataUser from "../DataUser/DataUser";
 import ContentPost from "../ContentPost/ContentPost";
+import TitleDetailPost from "../TitleDetailPost/TitleDetailPost";
 
 function CardDetailPost(props) {
   const { title, src, userName, date, tag, content } = props;
@@ -21,7 +21,7 @@ function CardDetailPost(props) {
       <Card.Body className="p-3 p-md-4">
         <DataUser userName={userName} date={date} />
         <div className="d-flex flex-column gap-2">
-          <TitleCard title={title} />
+          <TitleDetailPost title={title} />
         </div>
         <div className="mb-4">
           <SectionTags tag={tag} />
