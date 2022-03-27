@@ -7,11 +7,16 @@ import Navbar from "../components/Navbar/Navbar";
 import AsideRightDetailPost from "../components/AsideRightDetailPost/AsideRightDetailPost";
 import CardDetailPost from "../components/CardDetailPost/CardDetailPost";
 import SectionExtraDetailPost from "../components/SectionExtraDetailPost/SectionExtraDetailPost";
+import FooterFixDetailPost from "../components/FooterFixDetailPost/FooterFixDetailPost";
 
 function DetailPost(props) {
   const params = useParams();
 
   const [dataPost, setDataPost] = React.useState({});
+  const [heart, setHeart] = React.useState(0);
+  const [unicorn, setUnicorn] = React.useState(0);
+  const [saved, setSaved] = React.useState(0);
+
   const { title, content, tags, writer, createdAt } = dataPost;
 
   React.useEffect(() => {
@@ -19,7 +24,8 @@ function DetailPost(props) {
       const post = await fetch(`http://localhost:8080/posts/${params.idPost}`, {
         method: "GET",
         headers: {
-          Authorization: "",
+          Authorization:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjY1Nzc1ZjZjMTU0ZmQ4Nzk0NWRhYyIsImlhdCI6MTY0ODMxODkyNywiZXhwIjoxNjQ4MzU0OTI3fQ.IA_E0DudbjgA48y30wyXMDL22fxrfp6M2LiDnq2-zJI",
         },
       }).then((res) => res.json());
       setDataPost(post.data.post);
@@ -36,7 +42,14 @@ function DetailPost(props) {
       <Container style={{ marginTop: "64px", paddingTop: "1rem" }}>
         <Row>
           <Col md={1}>
-            <AsideLeftDetailPost />
+            <AsideLeftDetailPost
+              heart={heart}
+              setHeart={setHeart}
+              unicorn={unicorn}
+              setUnicorn={setUnicorn}
+              saved={saved}
+              setSaved={setSaved}
+            />
           </Col>
           <Col md={11} lg={8}>
             <CardDetailPost
@@ -54,7 +67,17 @@ function DetailPost(props) {
           </Col>
         </Row>
       </Container>
-      <FooterDetailPost />
+      <footer>
+        <FooterDetailPost />
+        <FooterFixDetailPost
+          heart={heart}
+          setHeart={setHeart}
+          unicorn={unicorn}
+          setUnicorn={setUnicorn}
+          saved={saved}
+          setSaved={setSaved}
+        />
+      </footer>
     </section>
   );
 }

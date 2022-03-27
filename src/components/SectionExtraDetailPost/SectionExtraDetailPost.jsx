@@ -1,6 +1,6 @@
 import React from "react";
 import Avatar from "../Avatar/Avatar";
-import TitleCard from "../TitleCard/TitleCard";
+import TitleSecondary from "../TitleSecondary/TitleSecondary";
 
 function SectionExtraDetailPost() {
   return (
@@ -9,10 +9,7 @@ function SectionExtraDetailPost() {
       <div className="d-flex gap-3 align-items-start">
         <Avatar src="/assets/img/user-01.webp" />
         <div>
-          <TitleCard
-            title="Project Benatar: Publishing DEV-powered websites with Stackbit"
-            style={{ fontSize: "10px" }}
-          />
+          <TitleSecondary title="Project Benatar: Publishing DEV-powered websites with Stackbit" />
           <span className="fw-light text-secondary">
             Ohad Eder-Pressman - Jun 19 '19
           </span>
@@ -21,7 +18,7 @@ function SectionExtraDetailPost() {
       <div className="d-flex gap-3 align-items-start">
         <Avatar src="/assets/img/user-02.webp" />
         <div>
-          <TitleCard title="Project Benatar: Publishing DEV-powered websites with Stackbit" />
+          <TitleSecondary title="Project Benatar: Publishing DEV-powered websites with Stackbit" />
           <span className="fw-light text-secondary">
             Ohad Eder-Pressman - Jun 19 '19
           </span>
@@ -30,7 +27,7 @@ function SectionExtraDetailPost() {
       <div className="d-flex gap-3 align-items-start">
         <Avatar src="/assets/img/user-03.webp" />
         <div>
-          <TitleCard title="Project Benatar: Publishing DEV-powered websites with Stackbit" />
+          <TitleSecondary title="Project Benatar: Publishing DEV-powered websites with Stackbit" />
           <span className="fw-light text-secondary">
             Ohad Eder-Pressman - Jun 19 '19
           </span>
@@ -39,7 +36,7 @@ function SectionExtraDetailPost() {
       <div className="d-flex gap-3 align-items-start">
         <Avatar src="/assets/img/user-04.webp" />
         <div>
-          <TitleCard title="Project Benatar: Publishing DEV-powered websites with Stackbit" />
+          <TitleSecondary title="Project Benatar: Publishing DEV-powered websites with Stackbit" />
           <span className="fw-light text-secondary">
             Ohad Eder-Pressman - Jun 19 '19
           </span>
