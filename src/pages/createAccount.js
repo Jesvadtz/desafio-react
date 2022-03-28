@@ -18,16 +18,33 @@ function SignUp() {
 
   const SubmitNewUser = async (event) => {
     event.preventDefault();
-    await fetch('http://localhost:8080/writers/signUp', {
+    console.log(newUser)
+    /* fetch('http://localhost:8080/writers/signUp', {
       method: "POST",
       body: JSON.stringify(newUser),
+      headers: {
+        "Content-Type":"application/json"
+      }
     })
         .then((res) => {
           console.log("RES", res);
         })
         .catch((err)=>{
           console.log("ERR",err);
-        });
+        });*/
+        const options = {
+          method: "POST",
+          body:JSON.stringify(newUser),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+        fetch('http://localhost:8080/writers/signUp',options)
+        .then((response)=>response.json())
+        .then((data) => {
+          console.log(data)
+        })
+        .catch((error)=>{console.log(error)})
  };   
     
 
@@ -75,12 +92,12 @@ return (
       </Form.Group>
       <Form.Group className="mb-3" style={{ minWidth: "400px" }} controlId="formBasicEmail">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="text" placeholder="Password" mail="password" onChange={createUser} />
+        <Form.Control type="text" placeholder="Password" name="password" onChange={createUser} />
         <Form.Text className="text-muted">
           We'll never share your information with anyone.
         </Form.Text>
       </Form.Group>
-      <Button variant="primary" type="submit" onSubmit={SubmitNewUser}>
+      <Button variant="primary" type="submit">
         Submit
       </Button>
     </Form>
