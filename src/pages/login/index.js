@@ -4,6 +4,7 @@ import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 import Navbar from "../../components/Navbar/Navbar";
+import FooterDetailPost from "../../components/FooterDetailPost/FooterDetalPost";
 
 function Login() {
   const navigate = useNavigate();
@@ -95,6 +96,9 @@ function Login() {
           <a className="forgetPL">I forgot my password</a>
         </div>
       </div>
+      <br></br>
+      <br></br>
+      <FooterDetailPost />
     </div>
   );
 }
