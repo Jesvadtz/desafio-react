@@ -28,8 +28,12 @@ function Login() {
       body: JSON.stringify(loginData),
       headers: { "Content-Type": "application/json" },
     })
-      .then((result) => {
-        console.log("RES", result);
+      .then((result) => result.json())
+      .then((data) => {
+        console.log(data);
+        const miStorage = window.localStorage;
+        miStorage.setItem("idWriter", data.data.id);
+        miStorage.setItem("token", data.data.token);
       })
       .catch((err) => {
         console.log("ERR", err);

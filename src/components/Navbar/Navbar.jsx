@@ -6,6 +6,11 @@ import { Container, Nav } from "react-bootstrap";
 import "./Navbar.scss";
 
 function Navbar() {
+  const miStorage = window.localStorage;
+  const idWriter = miStorage.getItem("idWriter")
+    ? miStorage.getItem("idWriter")
+    : "";
+  console.log(idWriter);
   return (
     <nav className="navbar navbar-light navbar-expand-lg fixed-top bg-white m-navbar">
       <Container>
@@ -43,9 +48,13 @@ function Navbar() {
           <Link to="/create-account">
             <ButtonSecondary text="SignUp" />
           </Link>
-          <Link to="/account/:idWriter/edit">
-            <ButtonSecondary text="Edit Writer" />
-          </Link>
+          {miStorage.getItem("idWriter") ? (
+            <Link to={`/account/${miStorage.getItem("idWriter")}/edit`}>
+              <ButtonSecondary text="Edit Writer" />
+            </Link>
+          ) : (
+            ""
+          )}
         </div>
       </Container>
     </nav>

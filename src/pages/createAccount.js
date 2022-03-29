@@ -42,6 +42,7 @@ function SignUp() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        console.log("id usuario", data.data.writer._id);
       })
       .catch((error) => {
         console.log(error);
