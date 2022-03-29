@@ -32,11 +32,13 @@ function Navbar() {
           </div>
         </div>
         <div className="d-flex justify-content-end">
-          <Nav.Item>
-            <Nav.Link eventKey="link-1" className="d-none d-md-block">
-              Log in
-            </Nav.Link>
-          </Nav.Item>
+          <Link className="login" to="/login">
+            <Nav.Item>
+              <p eventKey="link-1" className="d-none d-md-block">
+                Log in
+              </p>
+            </Nav.Item>
+          </Link>
           <Link to="/newpost">
             <ButtonSecondary text="Create Post" />
           </Link>

@@ -1,0 +1,93 @@
+.containerLogin {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 70px;
+  padding: 24px;
+  background-color: white;
+}
+@media (min-width: 600px) {
+  .containerLogin {
+    max-width: 640px;
+    border-radius: 5px;
+  }
+}
+.main-container {
+  margin: 0 auto;
+  padding: 12px 0 120px 0;
+}
+hr {
+  background-color: darkgray;
+  width: 10%;
+  height: 1px;
+}
+.containerLP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+h3 {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#ancorh3 {
+  color: blue;
+}
+.buttonL {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+.appleBtn {
+  background-color: black;
+}
+
+.foremBtn {
+  background-color: #00313d;
+}
+.gitHubBtn {
+  background-color: #23292f;
+}
+
+.twitterBtm {
+  background-color: #009cfa;
+}
+.bi {
+  margin-right: 12px;
+}
+.btnLR {
+  width: 100%;
+  height: 48px;
+  background-color: #4825e7;
+}
+.forgetPL {
+  color: #4825e7;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  display: flex;
+  font-size: 14px;
+}
+
+.containerFPL {
+  font-display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  padding: 24px;
+}

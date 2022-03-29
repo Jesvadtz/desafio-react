@@ -5,6 +5,7 @@ import TextAR from "./components/TextAR/TextAR";
 import Layout from "./pages";
 import Home from "./pages";
 import NewPost from "./pages/NewPost";
+import Login from "./pages/login";
 
 import "./App.scss";
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="newpost" element={<NewPost />} />
+        <Route path="login" element={<Login />} />
       </Routes>
     </div>
   );
