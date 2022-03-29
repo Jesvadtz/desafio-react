@@ -1,0 +1,16 @@
+.continerNewHC {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.newTHC {
+  background-color: #fbd34d;
+  color: #8a602a;
+  border-radius: 4px;
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
