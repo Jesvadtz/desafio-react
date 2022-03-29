@@ -1,0 +1,19 @@
+.inputSearch {
+    height: 40px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  
+  .inputSearch button {
+    font-size: 24px;
+  }
+  @media screen and (min-width: 768px) {
+    .inputSearch {
+      width: 366px;
+    }
+    .inputSearch button {
+      position: relative;
+      left: -48px;
+    }
+  }

@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
 import NavbarMobile from "../NavbarMobile/NavbarMobile";
-import "./Navbar.scss";
 import { Container, Nav } from "react-bootstrap";
+import "./Navbar.scss";
 
 function Navbar() {
   return (
@@ -10,9 +11,14 @@ function Navbar() {
       <Container>
         <div className="d-flex justify-content-md-between align-items-center">
           <NavbarMobile />
-          <a id="homePost" className="navbar-brand" href="index.html">
-            <img src="/assets/svg/devto.svg" alt="Logo DevTo" width="40" />
-          </a>
+          <Link to="/">
+            <img
+              src="/assets/svg/devto.svg"
+              alt="Logo DevTo"
+              width="40"
+              className="me-2"
+            />
+          </Link>
           <div className="d-flex inputSearch">
             <input
               className="form-control d-none d-md-block"
@@ -26,12 +32,17 @@ function Navbar() {
           </div>
         </div>
         <div className="d-flex justify-content-end">
-          <Nav.Item>
-            <Nav.Link eventKey="link-1" className="d-none d-md-block">
-              Log in
-            </Nav.Link>
-          </Nav.Item>
-          <ButtonSecondary text="Create Post" />
+          <Link className="login" to="/login">
+            <Nav.Item>
+              <p className="d-none d-md-block">Log in</p>
+            </Nav.Item>
+          </Link>
+          <Link to="/newpost">
+            <ButtonSecondary text="Create Post" />
+          </Link>
+          <Link to="/create-account">
+            <ButtonSecondary text="SignUp" />
+          </Link>
         </div>
       </Container>
     </nav>

@@ -5,7 +5,7 @@ function Tag(props) {
   const { tag } = props;
   return (
     <Button variant="light" className="btn-white">
-      #{tag}
+      {tag}
     </Button>
   );
 }

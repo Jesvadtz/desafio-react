@@ -6,8 +6,8 @@
   text-decoration: none;
   color: rgb(0, 0, 0);
   line-height: 34px;
-  padding: 16px;
-  cursor:pointer;
+  padding: 10px;
+  cursor: pointer;
 }
 .titleCardAR:hover {
   color: #3b49df;
