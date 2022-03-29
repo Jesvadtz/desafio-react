@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./login.css";
 import { Form, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 import Navbar from "../../components/Navbar/Navbar";
 
 function Login() {
+  const navigate = useNavigate();
   const [loginData, setLogin] = useState({
     email: "",
     password: "",
@@ -31,6 +33,7 @@ function Login() {
       .catch((err) => {
         console.log("ERR", err);
       });
+    navigate("/", { replace: true });
   };
 
   return (
@@ -43,16 +46,16 @@ function Login() {
           developers
         </h3>
         <div className="buttonL appleBtn">
-          <i class="bi bi-apple"></i> Continue with Apple
+          <i className="bi bi-apple"></i> Continue with Apple
         </div>
         <div className="buttonL foremBtn">
-          <i class="bi bi-discord"></i> Continue with Forem
+          <i className="bi bi-discord"></i> Continue with Forem
         </div>
         <div className="buttonL gitHubBtn">
-          <i class="bi bi-github"></i> Continue with GitHub
+          <i className="bi bi-github"></i> Continue with GitHub
         </div>
         <div className="buttonL twitterBtm">
-          <i class="bi bi-twitter"></i> Continue with Twitter
+          <i className="bi bi-twitter"></i> Continue with Twitter
         </div>
         <div className="containerLP">
           <hr></hr>

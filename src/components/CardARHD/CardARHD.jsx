@@ -10,19 +10,19 @@ function CardARHD(props) {
       <TitleCardAR title="#discuss" />
       <div className="cardARSS numCPARH">
         <TitleARAncor title="Doubt: multiprocessing basic example"></TitleARAncor>
-        <p class="text-muted ">5 comments</p>
+        <p className="text-muted ">5 comments</p>
       </div>
       <div className="cardARSS numCPARH">
         <TitleARAncor title="Doubt: multiprocessing basic example"></TitleARAncor>
-        <p class="text-muted ">20 comments</p>
+        <p className="text-muted ">20 comments</p>
       </div>
       <div className="cardARSS numCPARH">
         <TitleARAncor title="Doubt: multiprocessing basic example"></TitleARAncor>
-        <p class="text-muted ">38 comments</p>
+        <p className="text-muted ">38 comments</p>
       </div>
       <div className="cardARSS numCPARH">
         <TitleARAncor title="Doubt: multiprocessing basic example"></TitleARAncor>
-        <p class="text-muted ">17 comments</p>
+        <p className="text-muted ">17 comments</p>
       </div>
     </Card>
   );
