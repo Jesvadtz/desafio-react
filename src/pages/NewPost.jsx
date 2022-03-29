@@ -1,6 +1,6 @@
 import React from "react";
 import NavbarNewPost from "../components/NavbarNewPost/NavbarNewPost";
-import InputNewPost from "../components/InputNewPost/InputNewPost";
+import FormPost from "../components/FormPost/FormPost";
 import { Container, Row, Col } from "react-bootstrap";
 
 function NewPost() {
@@ -11,7 +11,7 @@ function NewPost() {
         <Container>
           <Row>
             <Col md={8}>
-              <InputNewPost />
+              <FormPost />
             </Col>
             <Col md={3}></Col>
           </Row>

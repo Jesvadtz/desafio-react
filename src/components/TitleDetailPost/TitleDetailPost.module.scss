@@ -1,0 +1,9 @@
+.titleDetailPost {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+@media (min-width: 768px) {
+  .titleDetailPost {
+    font-size: 3rem;
+  }
+}

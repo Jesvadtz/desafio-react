@@ -1,0 +1,10 @@
+.footer-detail-post {
+  background-color: #d6d6d7;
+  text-align: center;
+  padding: 2rem 14rem;
+}
+@media (max-width: 768px) {
+  .footer-detail-post {
+    padding: 2rem 2rem;
+  }
+}

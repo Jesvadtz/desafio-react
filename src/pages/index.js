@@ -11,6 +11,7 @@ import CardARHC from "../components/CardARHC/CardARHC";
 import CardARHM from "../components/CardARHM/CardARHM";
 import CardARHW from "../components/CardARHW/CardARHW";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Home(props) {
   const [posts, setPost] = React.useState([]);
@@ -37,13 +38,15 @@ function Home(props) {
               let datePost = date.toLocaleString();
 
               return (
-                <CardPost
-                  title={post.title}
-                  key={post._id}
-                  userName={post.writer}
-                  date={datePost}
-                  tag={post.tags}
-                />
+                <Link to={`/posts/${post._id}`} key={post._id}>
+                  <CardPost
+                    title={post.title}
+                    key={post._id}
+                    userName={post.writer}
+                    date={datePost}
+                    tag={post.tags}
+                  />
+                </Link>
               );
             })}
           </Col>
@@ -60,14 +63,6 @@ function Home(props) {
           </Col>
         </Row>
       </Container>
-      {/* <Header>
-      </Header>
-      <Main>
-        <AsideLeft />
-        <SectionPost />
-        <AdsideRight />
-      </Main>
-      <Footer /> */}
     </>
   );
 }

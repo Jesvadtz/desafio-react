@@ -4,14 +4,13 @@ import ButtonIcon from "../ButtonIcon/ButtonIcon";
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 import "./FooterNewPost.scss";
 
-function FooterNewPost(props) {
+function FooterNewPost({ handleDelete, primaryButtonText = "Publish" }) {
   return (
-    <Container>
-      <footer className="d-flex justify-content-start sticky-bottom footer-post ms-lg-2 pt-2 gap-2">
-        <ButtonPrimary text="Publish" />
-        <ButtonIcon text="Save" />
+    <Container className="ps-0">
+      <footer className="d-flex justify-content-start sticky-bottom footer-post py-2 gap-2">
+        <ButtonPrimary text={primaryButtonText} />
         <ButtonIcon src="/assets/svg/icon-savepost.svg" />
-        <ButtonIcon text="Delete" />
+        <ButtonIcon text="Delete" onClick={handleDelete} />
       </footer>
     </Container>
   );
