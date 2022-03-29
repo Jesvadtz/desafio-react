@@ -6,6 +6,8 @@ import Navbar from "../components/Navbar/Navbar";
 import CardPost from "../components/CardPost/CardPost";
 import CardAsideR from "../components/CardAsideR/CardAsideR";
 import CardAsideRT from "../components/CardAsideRT/CardAsideRT";
+import CardAsideARS from "../components/CardAsideARS/CardAsideARS";
+import LeftSide from "../components/LeftSide/Left";
 import CardAsideARS from "../components/CardAsideRS/CardAsideARS";
 import CardARH from "../components/CardARH/CardARH";
 import CardARHD from "../components/CardARHD/CardARHD";
@@ -32,7 +34,9 @@ function Home(props) {
       <Navbar />
       <Container style={{ marginTop: "64px", paddingTop: "1rem" }}>
         <Row>
-          <Col md={3}>Robert</Col>
+          <Col md={3}>
+            <LeftSide />
+          </Col>
           <Col xs={12} md={9} lg={6} className="pe-0 ps-0 rounded-0">
             {posts.map((post) => {
               const date = new Date(post.createdAt);
