@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import SectionEditText from "../SectionEditText/SectionEditText";
-import { Button } from "react-bootstrap";
 import "./FormPost.scss";
 import FooterNewPost from "../FooterNewPost/FooterNewPost";
 
@@ -16,6 +15,7 @@ const initialState = {
 function FormPost({ dataPost = initialState, idPost }) {
   const navigate = useNavigate();
   const [newPost, setNewPost] = React.useState(dataPost);
+  const authorization = localStorage.getItem("token");
 
   function saveData(event) {
     setNewPost({
@@ -35,7 +35,7 @@ function FormPost({ dataPost = initialState, idPost }) {
       method,
       body: JSON.stringify(newPost),
       headers: {
-        Authorization: "",
+        Authorization: authorization,
         "Content-Type": "application/json",
       },
     }).then((res) => res.json());
@@ -47,7 +47,7 @@ function FormPost({ dataPost = initialState, idPost }) {
       await fetch(`http://localhost:8080/posts/${idPost}`, {
         method: "DELETE",
         headers: {
-          Authorization: "",
+          Authorization: authorization,
         },
       });
     }
@@ -60,9 +60,19 @@ function FormPost({ dataPost = initialState, idPost }) {
         <div className="input-post d-flex flex-column align-items-start mt-2 gap-3">
           <Form className="w-100" onSubmit={savePost}>
             <div className="containerPost">
-              <Button variant="outline-secondary" className="ms-3 ms-md-5 mt-4">
-                Add a cover image
-              </Button>
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlInput3"
+              >
+                <Form.Control
+                  type="text"
+                  className="form-control border-0 ps-3 ps-md-5 pt-4"
+                  placeholder="URL image..."
+                  name="image"
+                  onChange={saveData}
+                  value={newPost.image}
+                />
+              </Form.Group>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
@@ -74,6 +84,19 @@ function FormPost({ dataPost = initialState, idPost }) {
                   name="title"
                   value={newPost.title}
                   onChange={saveData}
+                />
+              </Form.Group>
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlInput4"
+              >
+                <Form.Control
+                  type="text"
+                  className="form-control border-0 ps-3 ps-md-5 pt-4"
+                  placeholder="Tags..."
+                  name="tags"
+                  onChange={saveData}
+                  value={newPost.tags}
                 />
               </Form.Group>
               <SectionEditText />

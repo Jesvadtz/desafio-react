@@ -8,24 +8,27 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function CardDetailPost(props) {
-  const { title, src, userName, date, tag, content, idPost } = props;
+  const { title, image, userName, date, tag, content, idPost, editable } =
+    props;
 
   return (
-    <Card className="mb-3 p-4">
-      {src && (
+    <Card className="mb-3">
+      {image && (
         <Card.Img
           variant="top"
           alt="cover-post"
-          src={src}
+          src={image}
           className="coverPost"
         />
       )}
-      <Card.Body className="p-3 p-md-4">
+      <Card.Body className="p-3 p-md-5">
         <div className="d-flex justify-content-between align-items-start">
           <DataUser userName={userName} date={date} />
-          <Link to={`/posts/${idPost}/edit`}>
-            <Button variant="warning">Edit</Button>
-          </Link>
+          {editable && (
+            <Link to={`/posts/${idPost}/edit`}>
+              <Button variant="warning">Edit</Button>
+            </Link>
+          )}
         </div>
         <div className="d-flex flex-column gap-2 mt-3">
           <TitleDetailPost title={title} />

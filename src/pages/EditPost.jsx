@@ -14,7 +14,8 @@ function EditPost() {
       const post = await fetch(`http://localhost:8080/posts/${params.idPost}`, {
         method: "GET",
         headers: {
-          Authorization: "",
+          Authorization:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjY1Nzc1ZjZjMTU0ZmQ4Nzk0NWRhYyIsImlhdCI6MTY0ODU3MzAzNSwiZXhwIjoxNjQ4NjA5MDM1fQ.4FNg-BDz8JPzjEgyYbFqhJPLo2IZnCtSqRA7yn0aiBQ",
         },
       }).then((res) => res.json());
       setDataPost(post.data.post);

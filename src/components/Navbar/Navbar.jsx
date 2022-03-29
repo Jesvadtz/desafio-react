@@ -1,11 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
 import NavbarMobile from "../NavbarMobile/NavbarMobile";
 import { Container, Nav } from "react-bootstrap";
 import "./Navbar.scss";
 
-function Navbar() {
+function Navbar(props) {
+  const { editable } = props;
+  const navigate = useNavigate();
+  const authorization = localStorage.getItem("token");
+  console.log(authorization);
+
   return (
     <nav className="navbar navbar-light navbar-expand-lg fixed-top bg-white m-navbar">
       <Container>
@@ -31,18 +36,36 @@ function Navbar() {
             </button>
           </div>
         </div>
-        <div className="d-flex justify-content-end">
-          <Link className="login" to="/login">
-            <Nav.Item>
-              <p className="d-none d-md-block">Log in</p>
-            </Nav.Item>
-          </Link>
-          <Link to="/newpost">
-            <ButtonSecondary text="Create Post" />
-          </Link>
-          <Link to="/create-account">
-            <ButtonSecondary text="SignUp" />
-          </Link>
+        <div className="d-flex justify-content-end gap-2 align-items-center">
+          {authorization ? (
+            <div className="d-flex gap-3 justify-content-center align-items-center">
+              <Nav.Item>
+                <p
+                  className="d-none d-md-block m-0"
+                  onClick={() => {
+                    localStorage.removeItem("token");
+                    navigate("/", { replace: true });
+                  }}
+                >
+                  Log Out
+                </p>
+              </Nav.Item>
+              <Link to="/newpost">
+                <ButtonSecondary text="Create Post" />
+              </Link>
+            </div>
+          ) : (
+            <div className="d-flex justify-content-center align-items-center">
+              <Link className="login" to="/login">
+                <Nav.Item>
+                  <p className="d-none d-md-block m-0">Log in</p>
+                </Nav.Item>
+              </Link>
+              <Link to="/create-account">
+                <ButtonSecondary text="SignUp" />
+              </Link>
+            </div>
+          )}
         </div>
       </Container>
     </nav>
