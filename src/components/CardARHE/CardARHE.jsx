@@ -10,23 +10,23 @@ function CardARHE(props) {
       <TitleCardAR title="#explainlikeimfive" />
       <div className="cardARSS numCPARH">
         <TitleARAncor title="What is meant by a shape in programming"></TitleARAncor>
-        <p class="text-muted ">5 comments</p>
+        <p className="text-muted ">5 comments</p>
       </div>
       <div className="cardARSS numCPARH">
         <TitleARAncor title="The Shell Introduction I Wish I Had"></TitleARAncor>
-        <p class="text-muted ">13 comments</p>
+        <p className="text-muted ">13 comments</p>
       </div>
       <div className="cardARSS numCPARH">
         <TitleARAncor title="What is a promise in javascript ? how does it solve callback hell issue?"></TitleARAncor>
-        <p class="text-muted ">28 comments</p>
+        <p className="text-muted ">28 comments</p>
       </div>
       <div className="cardARSS numCPARH">
         <TitleARAncor title="Explain Artifacts (Deployment) Like I'm Five"></TitleARAncor>
-        <p class="text-muted ">19 comments</p>
+        <p className="text-muted ">19 comments</p>
       </div>
       <div className="cardARSS numCPARH">
         <TitleARAncor title="Like im 5:What is JQUERY???????"></TitleARAncor>
-        <p class="text-muted ">34 comments</p>
+        <p className="text-muted ">34 comments</p>
       </div>
     </Card>
   );

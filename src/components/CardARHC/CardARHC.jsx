@@ -16,7 +16,7 @@ function CardARHC(props) {
       </div>
       <div className="cardARSS numCPARH">
         <TitleARAncor title="How to solve a coding problem"></TitleARAncor>
-        <p class="text-muted ">28 comments</p>
+        <p className="text-muted ">28 comments</p>
       </div>
       <div className="cardARSS">
         <TitleARAncor title="Concluindo o segundo projeto do desafio Jornada DEV"></TitleARAncor>

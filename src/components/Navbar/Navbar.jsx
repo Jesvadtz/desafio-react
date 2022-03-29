@@ -34,9 +34,7 @@ function Navbar() {
         <div className="d-flex justify-content-end">
           <Link className="login" to="/login">
             <Nav.Item>
-              <p eventKey="link-1" className="d-none d-md-block">
-                Log in
-              </p>
+              <p className="d-none d-md-block">Log in</p>
             </Nav.Item>
           </Link>
           <Link to="/newpost">
