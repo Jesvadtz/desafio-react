@@ -8,6 +8,7 @@ import Login from "./pages/login";
 import EditPost from "./pages/EditPost";
 import "./App.scss";
 import DetailPost from "./pages/DetailPost";
+import EditWriter from "./pages/EditWriter/EditWriter"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="newpost" element={<NewPost />} />
         <Route path="create-account" element={<SignUp/>} />
+        <Route path="account/:idWriter/edit" element={<EditWriter/>} />
         <Route path="login" element={<Login />} />
         <Route path="posts/:idPost" element={<DetailPost />} />
         <Route path="posts/:idPost/edit" element={<EditPost />} />

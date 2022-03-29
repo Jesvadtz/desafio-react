@@ -43,6 +43,9 @@ function Navbar() {
           <Link to="/create-account">
             <ButtonSecondary text="SignUp" />
           </Link>
+          <Link to="/account/:idWriter/edit">
+            <ButtonSecondary text="Edit Writer" />
+          </Link>
         </div>
       </Container>
     </nav>
