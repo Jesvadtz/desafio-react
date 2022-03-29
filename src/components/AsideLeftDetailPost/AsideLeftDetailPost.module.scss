@@ -1,0 +1,34 @@
+.fixedAsideLeft {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 120px;
+  z-index: 1020;
+}
+.btnFavorites {
+  &:hover {
+    background-color: rgba(220, 24, 24, 0.1);
+    border-radius: 50%;
+    fill: #d31616;
+  }
+}
+.btnUnicorn {
+  &:hover {
+    background-color: rgba(38, 217, 202, 0.1);
+    border-radius: 50%;
+    fill: #26d9ca;
+  }
+}
+.btnSaved {
+  &:hover {
+    background-color: rgba(59, 73, 223, 0.1);
+    border-radius: 50%;
+    fill: #3b49df;
+  }
+}
+.btnMore {
+  &:hover {
+    background-color: rgba(179, 179, 184, 0.2);
+    border-radius: 50%;
+    fill: #1a1a1a;
+  }
+}

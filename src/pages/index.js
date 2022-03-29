@@ -16,12 +16,11 @@ import CardARHW from "../components/CardARHW/CardARHW";
 
 function Home(props) {
   const [posts, setPost] = React.useState([]);
-  const { title, src, userName, date, key, tag } = props;
 
   React.useEffect(() => {
     async function getAllPost() {
-      const posts = await fetch("https://api-devto.vercel.app/posts").then(
-        (res) => res.json()
+      const posts = await fetch("http://localhost:8080/posts").then((res) =>
+        res.json()
       );
       setPost(posts.data.posts);
     }
@@ -40,13 +39,15 @@ function Home(props) {
               let datePost = date.toLocaleString();
 
               return (
-                <CardPost
-                  title={post.title}
-                  key={post._id}
-                  userName={post.writer}
-                  date={datePost}
-                  tag={post.tags}
-                />
+                <Link to={`/posts/${post._id}`} key={post._id}>
+                  <CardPost
+                    title={post.title}
+                    key={post._id}
+                    userName={post.writer}
+                    date={datePost}
+                    tag={post.tags}
+                  />
+                </Link>
               );
             })}
           </Col>
@@ -63,14 +64,6 @@ function Home(props) {
           </Col>
         </Row>
       </Container>
-      {/* <Header>
-      </Header>
-      <Main>
-        <AsideLeft />
-        <SectionPost />
-        <AdsideRight />
-      </Main>
-      <Footer /> */}
     </>
   );
 }
