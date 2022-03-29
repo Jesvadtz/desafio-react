@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
-import NavbarMobile from "../NavbarMobile/NavbarMobile";
+import MobileNavSignup from "../MobileNavSignup/MobileNavSignup";
 import { Container, Nav } from "react-bootstrap";
-import "./Navbar.scss";
+import "./NavSignup.scss";
 
-function Navbar() {
+function NavbarSignup() {
   return (
-    <nav className="navbar navbar-light navbar-expand-lg fixed-top bg-white m-navbar">
+    <Nav className="navbar navbar-light navbar-expand-lg fixed-top bg-white m-navbar">
       <Container>
         <div className="d-flex justify-content-md-between align-items-center">
-          <NavbarMobile />
+          <MobileNavSignup />
           <Link to="/">
             <img
               src="/assets/svg/devto.svg"
@@ -32,11 +32,11 @@ function Navbar() {
           </div>
         </div>
         <div className="d-flex justify-content-end">
-          <Link className="login" to="/login">
-            <Nav.Item>
-              <p className="d-none d-md-block">Log in</p>
-            </Nav.Item>
-          </Link>
+          <Nav.Item>
+            <Nav.Link eventKey="link-1" className="d-none d-md-block">
+              Log in
+            </Nav.Link>
+          </Nav.Item>
           <Link to="/newpost">
             <ButtonSecondary text="Create Post" />
           </Link>
@@ -45,8 +45,8 @@ function Navbar() {
           </Link>
         </div>
       </Container>
-    </nav>
+    </Nav>
   );
 }
 
-export default Navbar;
+export default NavbarSignup;
