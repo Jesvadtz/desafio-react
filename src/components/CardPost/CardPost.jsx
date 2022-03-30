@@ -6,9 +6,10 @@ import DataUser from "../DataUser/DataUser";
 import SectionButtonComments from "../SectionButtonComments/SectionButtonComments";
 import SectionSavePost from "../SectionSavePost/SectionSavePost";
 import "./CardPost.scss";
+import { Link } from "react-router-dom";
 
 function CardPost(props) {
-  const { title, src, userName, date, tag } = props;
+  const { title, src, userName, date, tag, post } = props;
   const [reactions, setReactions] = React.useState(0);
   const [comments, setComments] = React.useState(0);
 
@@ -25,7 +26,9 @@ function CardPost(props) {
       <Card.Body className="p-3 p-md-4">
         <DataUser userName={userName} date={date} />
         <div className="d-flex flex-column gap-2 title-card">
-          <TitleCard title={title} />
+          <Link to={`/posts/${post._id}`}>
+            <TitleCard title={title} />
+          </Link>
         </div>
         <div className="tags-card mt-2">
           <SectionTags tag={tag} />

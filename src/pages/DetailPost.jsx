@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
+import jwt from "jwt-decode";
+
 import FooterDetailPost from "../components/FooterDetailPost/FooterDetalPost";
 import AsideLeftDetailPost from "../components/AsideLeftDetailPost/AsideLeftDetailPost";
 import Navbar from "../components/Navbar/Navbar";
@@ -9,7 +11,7 @@ import CardDetailPost from "../components/CardDetailPost/CardDetailPost";
 import SectionExtraDetailPost from "../components/SectionExtraDetailPost/SectionExtraDetailPost";
 import FooterFixDetailPost from "../components/FooterFixDetailPost/FooterFixDetailPost";
 
-function DetailPost(props) {
+function DetailPost() {
   const params = useParams();
 
   const [dataPost, setDataPost] = React.useState({});
@@ -17,14 +19,21 @@ function DetailPost(props) {
   const [unicorn, setUnicorn] = React.useState(0);
   const [saved, setSaved] = React.useState(0);
 
-  const { title, content, tags, writer, createdAt } = dataPost;
+  const authorization = localStorage.getItem("token");
+  const data = jwt(authorization);
+  const userId = data?.id;
+  console.log(userId);
+
+  const { image, title, content, tags, writer, createdAt } = dataPost;
+  const writerName = `${writer?.name} ${writer?.lastName}`;
 
   React.useEffect(() => {
     async function getPost() {
       const post = await fetch(`http://localhost:8080/posts/${params.idPost}`, {
         method: "GET",
         headers: {
-          Authorization: "",
+          Authorization: authorization,
+          "Content-Type": "application/json",
         },
       }).then((res) => res.json());
       setDataPost(post.data.post);
@@ -34,10 +43,12 @@ function DetailPost(props) {
 
   const date = new Date(createdAt);
   let datePost = date.toLocaleString();
+  const editable = userId === writer?._id;
+  console.log(writer?._id);
 
   return (
     <section>
-      <Navbar />
+      <Navbar editable={editable} />
       <Container style={{ marginTop: "64px", paddingTop: "1rem" }}>
         <Row>
           <Col md={1}>
@@ -52,10 +63,12 @@ function DetailPost(props) {
           </Col>
           <Col md={11} lg={8}>
             <CardDetailPost
+              editable={editable}
+              image={image}
               title={title}
               content={content}
               tags={tags}
-              userName={writer}
+              userName={writerName}
               date={datePost}
               tag={tags}
               idPost={params.idPost}
@@ -63,7 +76,7 @@ function DetailPost(props) {
             <SectionExtraDetailPost />
           </Col>
           <Col lg={3}>
-            <AsideRightDetailPost userName={writer} />
+            <AsideRightDetailPost userName={writerName} />
           </Col>
         </Row>
       </Container>

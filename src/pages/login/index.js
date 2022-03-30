@@ -28,12 +28,17 @@ function Login() {
       headers: { "Content-Type": "application/json" },
     })
       .then((result) => {
-        console.log("RES", result);
+        result.json().then((data) => {
+          const token = data.data.token;
+          localStorage.setItem("token", token);
+          navigate("/", { replace: true });
+          // console.log(token);
+        });
+        // console.log("RES", result);
       })
       .catch((err) => {
-        console.log("ERR", err);
+        // console.log("ERR", err);
       });
-    navigate("/", { replace: true });
   };
 
   return (

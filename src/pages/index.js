@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 import Navbar from "../components/Navbar/Navbar";
 import CardPost from "../components/CardPost/CardPost";
@@ -15,7 +14,7 @@ import CardARHC from "../components/CardARHC/CardARHC";
 import CardARHM from "../components/CardARHM/CardARHM";
 import CardARHW from "../components/CardARHW/CardARHW";
 
-function Home(props) {
+function Home() {
   const [posts, setPost] = React.useState([]);
 
   React.useEffect(() => {
@@ -33,7 +32,7 @@ function Home(props) {
       <Navbar />
       <Container style={{ marginTop: "64px", paddingTop: "1rem" }}>
         <Row>
-          <Col md={3}>
+          <Col md={3} className="d-none d-md-block">
             <LeftSide />
           </Col>
           <Col xs={12} md={9} lg={6} className="pe-0 ps-0 rounded-0">
@@ -42,19 +41,19 @@ function Home(props) {
               let datePost = date.toLocaleString();
 
               return (
-                <Link to={`/posts/${post._id}`} key={post._id}>
-                  <CardPost
-                    title={post.title}
-                    key={post._id}
-                    userName={post.writer}
-                    date={datePost}
-                    tag={post.tags}
-                  />
-                </Link>
+                <CardPost
+                  post={post}
+                  title={post.title}
+                  key={post._id}
+                  userName={`${post?.writer?.name} ${post?.writer?.lastName}`}
+                  date={datePost}
+                  tag={post.tags}
+                  src={post.image}
+                />
               );
             })}
           </Col>
-          <Col>
+          <Col lg={3} className="d-none d-lg-block">
             <CardAsideRT></CardAsideRT>
             <CardAsideR></CardAsideR>
             <CardAsideARS></CardAsideARS>
