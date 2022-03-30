@@ -8,6 +8,7 @@ import AsideRightDetailPost from "../components/AsideRightDetailPost/AsideRightD
 import CardDetailPost from "../components/CardDetailPost/CardDetailPost";
 import SectionExtraDetailPost from "../components/SectionExtraDetailPost/SectionExtraDetailPost";
 import FooterFixDetailPost from "../components/FooterFixDetailPost/FooterFixDetailPost";
+import Comments from "../components/Comments/Comments";
 
 function DetailPost(props) {
   const params = useParams();
@@ -60,6 +61,7 @@ function DetailPost(props) {
               tag={tags}
               idPost={params.idPost}
             />
+             <Comments/>
             <SectionExtraDetailPost />
           </Col>
           <Col lg={3}>

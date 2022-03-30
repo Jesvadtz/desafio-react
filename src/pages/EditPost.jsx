@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import FormPost from "../components/FormPost/FormPost";
 
+
 function EditPost() {
   const params = useParams();
 
